@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guci Forest Tegal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="./image/logo guci forest.jpg" alt="Logo Guci Forest">
+                <h1>Guci Forest Tegal</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#content">Content</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home" class="background">
+        <div class="overlay">
+            <h1>Guci Forest Tegal</h1>
+            <p>Serenity of Vacation</p>
+            <p>Villa . Glamping . Camping . Cafe & Resto . Hot Spring Swimming Pool</p>
+            
+        </div>
+    </main>
+
+    <section id="about" class="about-container">
+        <img class="about-image" src="./image/guci-forest-2.jpg" alt="Guci Forest Image">
+
+        <div class="about-content">
+            <h1>GUCI FOREST TEGAL</h1>
+            <p>
+                Guci Forest berlokasi di Obyek Wisata Guci Kabupaten Tegal tepatnya di Jl. Obyek Wisata Guci, merupakan resort yang menyajikan kenyamanan kepada tamu untuk mencoba pengalaman baru menginap di villa dengan suasana hutan Pinus yang sejuk dan asri.
+            </p><br>
+            <p>
+                Selain villa Guci Forest juga menyediakn fasilitas pemandian air hangat dan kolam renang air hangat.
+            </p><br>
+            <p>
+                Terdapat fasilitas Camping Area bagi yang suka berpetualang di alam terbuka dengan suasana sejuk hutan Pinus.</p><br>    
+            <p>
+                Fasilitas yang terbaru adalah Glamping Area, dengan bangunan etnik Jawa dengan fasilitas yang lengkap akan membuat liburan anda semakin nyaman.
+            </p>
+            <button id="contactButton" class="contact-button">Hubungi Kami</button>
+        </div>
+    </section>
+    
+    <section id="content" class="content-container">
+        <h1>FASILITAS GUCI FOREST TEGAL</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./image/kolam-renang.jpg" alt="Hot Spring Water">
+                <h3>Hot Spring Water</h3>
+                <p>Kolam renang dengan air hangat alami yang menyegarkan dan menenangkan.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/camping.jpg" alt="Camping Area">
+                <h3>Camping Area</h3>
+                <p>Area camping di tengah hutan pinus, cocok untuk berpetualang di alam.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/glamping.webp" alt="Glamping Area">
+                <h3>Glamping Area</h3>
+                <p>Pilihan akomodasi modern dengan sentuhan etnik Jawa.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/villa.jpg" alt="Villa">
+                <h3>Villa</h3>
+                <p>Villa nyaman dengan nuansa alami hutan pinus yang asri.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/atv.jpg" alt="Outbound Area">
+                <h3>Outbound Area</h3>
+                <p>Fasilitas outbound untuk kegiatan seru bersama keluarga atau teman.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./image/cafe.jpg" alt="Restoran">
+                <h3>Cafe & Resto</h3>
+                <p>Menawarkan aneka makanan dan minuman kopi yang memberikan pengalaman baru.</p>
+            </div>
+        </div>
+
+        <h2>Harga Tiket & Parkir</h2>
+        <table class="tarif-table">
+            <tr>
+                <th>Jenis Tiket</th>
+                <th>Harga</th>
+            </tr>
+            <tr>
+                <td>Tiket Masuk</td>
+                <td>Rp. 25.000</td>
+            </tr>
+            <tr>
+                <td>Parkir Motor</td>
+                <td>Rp. 5.000</td>
+            </tr>
+            <tr>
+                <td>Parkir Mobil</td>
+                <td>Rp. 10.000</td>
+            </tr>
+            <tr>
+                <td>Parkir Bus</td>
+                <td>Rp. 50.000</td>
+            </tr>
+        </table>
+
+        <!-- Tombol untuk membuka modal -->
+        <button onclick="openModal()" class="check-price-btn">Cek Harga Tiket</button>
+
+        <!-- Modal Popup untuk Kalkulator Tiket -->
+        <div id="ticketModal" class="modal">
+            <div class="modal-content">
+                <h3>Hitung Total Harga Tiket</h3>
+                
+                <label for="numTickets">Jumlah Tiket:</label>
+                <input type="number" id="numTickets" min="0" placeholder="0" />
+
+                <label for="parking">Jenis Parkir:</label>
+                <select id="parking">
+                    <option value="0">Tidak Ada</option>
+                    <option value="5000">Parkir Motor - Rp. 5.000</option>
+                    <option value="10000">Parkir Mobil - Rp. 10.000</option>
+                    <option value="50000">Parkir Bus - Rp. 50.000</option>
+                </select>
+
+                <button onclick="calculateTotal()">Hitung Total</button>
+                
+                <div id="totalCost" class="total-cost">Total Biaya: Rp. 0</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Guci Forest</h2>
+                <p>Villa yang menyajikan kenyaman kepada tamu untuk mencoba pengalaman baru menginap di villa dengan suasana hutan. Selain villa Guci Forest juga menyediakan fasilitas pemandian air hangat dan kolam renang air hangat.</p>
+            </div>
+            <div class="footer-section follow-us">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="https://www.instagram.com/guciforest_/profilecard/?igsh=OT" target="_blank" class="social-link" data-platform="Instagram">
+                        <img src="./image/logo instagram.png" alt="Instagram Icon"> Instagram</a>
+                    </li>
+                    <li><a href="https://www.facebook.com/share/15Lx1WzqwV/" target="_blank" class="social-link" data-platform="Facebook">
+                        <img src="./image/logo facebook.png" alt="Facebook Icon"> Facebook</a>
+                    </li>
+                    <li><a href="https://www.tiktok.com/@guciforest_tiktok?_t=8rExr6wdwRu&_r=1" target="_blank" class="social-link" data-platform="TikTok">
+                        <img src="./image/logo tiktok.png" alt="TikTok Icon"> TikTok</a>
+                    </li>
+                    <li><a href="https://youtube.com/@guciforest5638?si=5wps_xnDzIx7NZ9-" target="_blank" class="social-link" data-platform="YouTube">
+                        <img src="./image/logo youtube.png" alt="YouTube Icon"> YouTube</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Keep Touch</h2>
+                <p>Jl. Raya Obyek Wisata Guci Kabupaten Tegal - Jawa Tengah</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Guci Forest Tegal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("contactButton").addEventListener("click", function() {
+            const phoneNumber = "6287839918637";
+            
+            const message = "Halo Kak, bisa dibantu untuk infonya?";
+            
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+        });
+
+         // Fungsi untuk membuka modal
+         function openModal() {
+            document.getElementById("ticketModal").style.display = "flex";
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById("ticketModal").style.display = "none";
+        }
+
+        // Fungsi untuk menghitung total biaya
+        function calculateTotal() {
+            const ticketPrice = 25000; // Harga tiket masuk
+            const numTickets = document.getElementById("numTickets").value;
+            const parkingCost = parseInt(document.getElementById("parking").value);
+            
+            // Menghitung total biaya
+            const totalTicketCost = numTickets * ticketPrice;
+            const totalCost = totalTicketCost + parkingCost;
+
+            // Menampilkan total biaya
+            document.getElementById("totalCost").innerText = "Total Biaya: Rp. " + totalCost.toLocaleString("id-ID");
+        }
+
+        // Menutup modal jika pengguna mengklik di luar area modal
+        window.onclick = function(event) {
+            const modal = document.getElementById("ticketModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        const socialLinks = document.querySelectorAll('.social-link');
+
+        socialLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); 
+
+                const platform = this.getAttribute('data-platform');
+
+                const confirmMessage = `Anda akan diarahkan ke ${platform}. Lanjutkan?`;
+                const userConfirmed = confirm(confirmMessage);
+
+                if (userConfirmed) {
+                    window.open(this.href, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
